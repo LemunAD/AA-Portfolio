@@ -44,6 +44,27 @@ li{
             opacity: 100%;
             transition: all 0.3s ease-in-out;
         }
+        
+        &::placeholder {
+            color: #FFD066; /* Yellow placeholder text */
+            opacity: 1;
+            font-weight: 500;
+        }
+        
+        &::-webkit-input-placeholder {
+            color: #FFD066;
+            opacity: 1;
+        }
+        
+        &::-moz-placeholder {
+            color: #FFD066;
+            opacity: 1;
+        }
+        
+        &:-ms-input-placeholder {
+            color: #FFD066;
+            opacity: 1;
+        }
     }
     textarea{
         width: 100%;
@@ -59,13 +80,34 @@ li{
             opacity: 100%;
             transition: all 0.3s ease-in-out;
         }
+        
+        &::placeholder {
+            color: #FFD066; /* Yellow placeholder text */
+            opacity: 1;
+            font-weight: 500;
+        }
+        
+        &::-webkit-input-placeholder {
+            color: #FFD066;
+            opacity: 1;
+        }
+        
+        &::-moz-placeholder {
+            color: #FFD066;
+            opacity: 1;
+        }
+        
+        &:-ms-input-placeholder {
+            color: #FFD066;
+            opacity: 1;
+        }
     }
     .flat-button{
         color: #ececec;
         background: 0 0;
         text-decoration: none;
         font: 11px;
-        font-weight: 700;
+        font-weight: 900;
         letter-spacing: 3px;
         padding:8px 10px;
         border: 1px solid #ececec;
@@ -181,6 +223,14 @@ li{
             margin-bottom: 15px;
             animation-delay: 0.5s;
             opacity: 1 !important; /* Force visible on mobile */
+            
+            label {
+                color: #FFD066 !important; /* Bright yellow labels on mobile */
+                font-size: 14px;
+                font-weight: 700;
+                margin-bottom: 6px;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); /* Add shadow for better readability */
+            }
         }
 
         li.half {
@@ -285,6 +335,11 @@ li{
 /* ===== TABLET RESPONSIVE (769px - 1024px) - NOT MOBILE ===== */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .contact-form {
+        label {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+        
         li.half {
             width: 48%;
             margin-left: 4%;
@@ -303,6 +358,7 @@ li{
         textarea {
             min-height: 140px;
             font-size: 15px;
+            
         }
 
         .flat-button {
@@ -353,6 +409,11 @@ li{
 @media screen and (max-width: 480px) {
     .contact-form {
         padding: 0 15px;
+        
+        label {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
 
         input[type='text'], 
         input[type='email'] {
