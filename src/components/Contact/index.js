@@ -93,8 +93,8 @@ const Contact = () => {
                     <AnimatedLetters letterClass={letterClass} strArray={['C','o','n','t','a','c','t','','u','s']} 
                     idx={15}/>
                 </h1>
-                <p>We're interested in all freelance opportunities, and more specifically ambitious projects
-                    If you have any request or would like a quote, please get in touch using the form below.
+                <p>I'm interested in all freelance opportunities, and more specifically ambitious projects
+                    If you would like to hire me or discuss a project, please get in touch using the form below.
                 </p>
                 <div className='contact-form'>
                     <form ref={form} onSubmit={sendEmail}>
@@ -117,40 +117,32 @@ const Contact = () => {
                             </li>
                         </ul>
                     </form>
-                    <div/>
-                    
-            </div>
-           
-
                 </div>
-                <div className='stage-cube-cont'>
+            </div>
+            <div className='stage-cube-cont'>
                 <div className='cubespinner'>
                     <div className='face1'>
                         <FontAwesomeIcon icon={faPython} color="#202020"/>
-                        </div>
+                    </div>
                     <div className='face2'>
                         <FontAwesomeIcon icon={faHtml5} color="#F06529"/>
-                        </div>
+                    </div>
                     <div className='face3'>
                         <FontAwesomeIcon icon={faReact} color="#5ED4F4"/>
-                        </div>
+                    </div>
                     <div className='face4'>
                         <FontAwesomeIcon icon={faJsSquare} color="#EFD81D"/>
-                        </div>
+                    </div>
                     <div className='face5'>
                         <FontAwesomeIcon icon={faGithub} color="#3E75C3"/>
-                        </div>
+                    </div>
                     <div className='face6'>
                         <FontAwesomeIcon icon={faWordpress} color="#00749C"/>
-                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
         <Loader type='cube-transition' />
-        
-    
-
-
     </>)
 }
 
