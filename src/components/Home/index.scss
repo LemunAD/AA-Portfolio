@@ -83,3 +83,105 @@
         }
     }
 }
+
+/* ===== MOBILE RESPONSIVE HOME PAGE ===== */
+@media screen and (max-width: 768px) {
+    .home-page {
+        .text-zone {
+            position: static;
+            left: auto;
+            top: auto;
+            transform: none;
+            width: 90%;
+            max-height: none;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: calc(100vh - 150px);
+        }
+
+        h1 {
+            font-size: 30px;
+            margin: 20px 0;
+            line-height: 1.2;
+
+            &::before {
+                font-size: 14px;
+                margin-top: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &::after {
+                font-size: 14px;
+                margin-top: 30px;
+                margin-left: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            img {
+                width: 40px;
+            }
+        }
+
+        h2 {
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .flat-button {
+            font-size: 12px;
+            letter-spacing: 3px;
+            padding: 12px 20px;
+            margin: 30px auto 0;
+            float: none;
+            display: inline-block;
+            text-align: center;
+            
+            &:hover {
+                background: #00ced1;
+                border-color: #00ced1;
+                color: #202020;
+            }
+        }
+    }
+}
+
+/* ===== TABLET RESPONSIVE (768px - 1024px) ===== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .home-page {
+        .text-zone {
+            left: 8%;
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 45px;
+            
+            &::before {
+                font-size: 16px;
+                margin-top: -35px;
+            }
+
+            &::after {
+                font-size: 16px;
+                margin-top: 35px;
+            }
+        }
+
+        h2 {
+            font-size: 13px;
+        }
+
+        .flat-button {
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+    }
+}

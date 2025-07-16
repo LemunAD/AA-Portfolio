@@ -7,18 +7,18 @@ const TextSphere = () => {
     const animationRef = useRef(null);
 
     const skills = [
-        "Angular", "React", "JavaScript", "HTML", "CSS", 
+         "React", "JavaScript", "HTML", "CSS", 
 "Python", "SQL", "SPSS", "Data Analysis",  
-"Git", "GitHub", "APIs", "REST",  
-"WordPress", "Elementor", "WooCommerce",  
+"Git", "GitHub", "APIs",  
+"WordPress","WooCommerce",  
 "Shopify", "SEO", "SEM", "Google Ads",  
 "Google Analytics", "Search Console", "Content",  
 "Marketing", "Email Marketing", "Social Media", "Branding",  
 "Photoshop", "Figma", "Canva", "UI", "UX",  
-"Project Management", "Agile", "Trello",  "Meta Ads",
-"Web Design", "Responsive", "No-Code", "Automation",  
-"Creative", "Problem Solving", "A/B Testing",  
-"Digital Strategy", "Remote Work", "Sales", "Consulting"
+"Project Management", "Agile","Meta Ads",
+"Web Design", "Responsive", "AI",  
+"Creative", "Problem Solving",  
+"Digital Strategy", "Sales", "Consulting"
     ];
 
     useEffect(() => {
@@ -42,8 +42,17 @@ const TextSphere = () => {
                 cloudContainer.className = 'tagcloud-wrapper';
                 containerRef.current.appendChild(cloudContainer);
 
+                // Responsive radius based on screen size
+                const getResponsiveRadius = () => {
+                    const screenWidth = window.innerWidth;
+                    if (screenWidth <= 480) return 200; // Small mobile - back to previous size
+                    if (screenWidth <= 768) return 250; // Large mobile - back to previous size
+                    if (screenWidth <= 1024) return 300; // Tablet
+                    return 360; // Desktop - smaller radius for better alignment
+                };
+
                 const options = {
-                    radius: 420,
+                    radius: getResponsiveRadius(),
                     maxSpeed: "normal",
                     initSpeed: "normal",
                     direction: 135,
@@ -62,8 +71,23 @@ const TextSphere = () => {
                         // Apply our custom styles to each tag
                         Array.from(cloudContainer.children).forEach(child => {
                             if (child.tagName === 'SPAN') {
+                                // Responsive font sizing
+                                const screenWidth = window.innerWidth;
+                                let baseFontSize, hoverFontSize;
+                                
+                                if (screenWidth <= 480) {
+                                    baseFontSize = '14px'; // 2px smaller for small mobile
+                                    hoverFontSize = '16px'; // 2px smaller for hover
+                                } else if (screenWidth <= 768) {
+                                    baseFontSize = '14px'; // 2px smaller for large mobile
+                                    hoverFontSize = '16px'; // 2px smaller for hover
+                                } else {
+                                    baseFontSize = '16px'; // Default for desktop
+                                    hoverFontSize = '18px'; // Default hover for desktop
+                                }
+                                
                                 child.style.color = '#00ced1';
-                                child.style.fontSize = '16px';
+                                child.style.fontSize = baseFontSize;
                                 child.style.fontWeight = '600';
                                 child.style.textTransform = 'uppercase';
                                 child.style.cursor = 'pointer';
@@ -72,12 +96,12 @@ const TextSphere = () => {
                                 // Add hover effects
                                 child.addEventListener('mouseenter', () => {
                                     child.style.color = '#ffffff';
-                                    child.style.fontSize = '18px';
+                                    child.style.fontSize = hoverFontSize;
                                 });
                                 
                                 child.addEventListener('mouseleave', () => {
                                     child.style.color = '#00ced1';
-                                    child.style.fontSize = '16px';
+                                    child.style.fontSize = baseFontSize;
                                 });
                             }
                         });
@@ -115,7 +139,16 @@ const TextSphere = () => {
         useEffect(() => {
             if (!sphereRef.current) return;
 
-            const radius = 300;
+            // Responsive radius for fallback sphere
+            const getResponsiveSphereRadius = () => {
+                const screenWidth = window.innerWidth;
+                if (screenWidth <= 480) return 160; // Small mobile - back to previous size
+                if (screenWidth <= 768) return 200; // Large mobile - back to previous size
+                if (screenWidth <= 1024) return 200; // Tablet
+                return 250; // Desktop - smaller radius for better alignment
+            };
+
+            const radius = getResponsiveSphereRadius();
             const tags = sphereRef.current.children;
             
             const animate = () => {

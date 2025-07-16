@@ -9,12 +9,12 @@ const Layout = () => {
       <div class="bg"></div>
   <Sidebar />
   <div className='page'>
-    <span className='tags top-tags'>def AZCoding(portfolio):</span>
+    <span className='tags top-tags'>def AA8(portfolio):</span>
     <Outlet />
 
     <span className='tags bottom-tags'>return(portfolio)
     <br />
-    <span className='bottom-tag-html'>#Hope you like it !</span>
+    <span className='bottom-tag-html'>#Hope you like my work !</span>
     
     </span>
     <a href='https://www.linkedin.com/in/adnane-ait-hamou/' rel='noreferrer' target="_blank" className='copy'> A website by Adnane Ait Hamou</a>

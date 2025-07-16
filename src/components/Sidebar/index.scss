@@ -1,11 +1,12 @@
 .nav-bar{
     background: #212121;
     width: 70px;
-    height: 100%;
-    position: absolute;
+    height: 100vh; /* Use viewport height for full screen coverage */
+    position: fixed; /* Fixed positioning ensures it covers full viewport */
     top: 0;
+    left: 0; /* Ensure it's anchored to the left edge */
     z-index: 3;
-    min-height: 500px;
+    min-height: 100vh; /* Ensure minimum height is also full viewport */
 
     .logo{
         display: block;
@@ -125,6 +126,157 @@
                     color: #ececec;
                 }
             }
+        }
+    }
+}
+
+/* ===== MOBILE RESPONSIVE DESIGN ===== */
+@media screen and (max-width: 768px) {
+    .nav-bar {
+        /* Transform to bottom navigation */
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: auto;
+        background: linear-gradient(135deg, #212121 0%, #2a2a2a 100%);
+        border-top: 2px solid #00ced1;
+        box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.3);
+        min-height: auto;
+        z-index: 1000;
+
+        .logo {
+            display: none; /* Hide logo on mobile */
+        }
+
+        nav {
+            /* Horizontal navigation layout */
+            position: static;
+            height: 100%;
+            width: 100%;
+            margin-top: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+
+            a {
+                font-size: 24px;
+                color: #4d4d4e;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+                height: 100%;
+                position: relative;
+                text-decoration: none;
+                flex: 1;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: #00ced1;
+                    background: rgba(0, 206, 209, 0.1);
+                    
+                    svg {
+                        opacity: 1;
+                        transform: scale(1.1);
+                    }
+                    
+                    &:after {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                &:after {
+                    content: '';
+                    font-size: 10px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    position: absolute;
+                    bottom: 8px;
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    opacity: 0.7;
+                    transition: all 0.3s ease;
+                    transform: translateY(5px);
+                    color: #ececec;
+                }
+
+                &:first-child::after {
+                    content: 'HOME';
+                }
+
+                svg {
+                    margin-bottom: 4px;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            a.about-link:after {
+                content: 'ABOUT';
+            }
+
+            a.portfolio-link:after {
+                content: 'WORK';
+            }
+
+            a.contact-link:after {
+                content: 'CONTACT';
+            }
+
+            a.active {
+                color: #00ced1;
+                background: rgba(0, 206, 209, 0.15);
+                
+                svg {
+                    color: #00ced1;
+                    transform: scale(1.1);
+                }
+                
+                &:after {
+                    opacity: 1;
+                    color: #00ced1;
+                }
+            }
+        }
+
+        ul {
+            /* Hide social media on mobile, or move to a different location */
+            display: none;
+        }
+    }
+}
+
+/* ===== TABLET RESPONSIVE (768px - 1024px) ===== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .nav-bar {
+        width: 60px;
+        
+        .logo img {
+            width: 35px;
+            
+            &.logosub {
+                width: 40px;
+            }
+        }
+        
+        nav a {
+            font-size: 20px;
+            line-height: 45px;
+            height: 45px;
+            
+            &:after {
+                font-size: 10px;
+            }
+        }
+        
+        ul li a {
+            font-size: 18px;
         }
     }
 }

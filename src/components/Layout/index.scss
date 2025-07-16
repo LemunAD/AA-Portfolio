@@ -2,6 +2,16 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  padding-left: 70px; /* Account for sidebar on desktop */
+  box-sizing: border-box;
+}
+
+/* Mobile: Remove left padding when sidebar is at bottom */
+@media screen and (max-width: 768px) {
+  .page {
+    padding-left: 0;
+    padding-bottom: 80px; /* Account for bottom navigation */
+  }
 }
 
 .top-tags {
@@ -18,6 +28,32 @@
   left: 120px;
   font-size: 18px;
   font-family: 'La Belle Aurore', cursive;
+  width: auto; /* Allow width to adapt to content */
+  max-width: calc(100% - 140px); /* Prevent overflow on desktop */
+}
+
+/* Mobile responsive tags */
+@media screen and (max-width: 768px) {
+  .tags {
+    left: 15px;
+    right: 15px; /* Allow tags to span available width */
+    width: auto; /* Let width adapt to content */
+    max-width: calc(100vw - 30px); /* Prevent overflow */
+    font-size: 12px; /* Smaller font for better fit */
+    bottom: 90px; /* Above mobile navigation */
+    word-wrap: break-word; /* Break long words if needed */
+    white-space: nowrap; /* Keep tags on one line when possible */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for very long content */
+  }
+  
+  .top-tags {
+    top: 15px;
+    left: 15px;
+    right: 15px; /* Allow full width */
+    width: auto; /* Adapt to content */
+    max-width: calc(100vw - 30px); /* Prevent overflow */
+  }
 }
 
 .bottom-tag-html {
@@ -40,6 +76,17 @@
   animation: fadeIn 1s  forwards;
   animation-delay: 1s;
 }
+
+/* Mobile responsive container */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    height: calc(100vh - 100px); /* Account for mobile nav */
+    top: 2%;
+    left: 2.5%;
+    min-height: auto;
+  }
+}
 .copy{
   text-decoration: none;
   color: #00ced1;
@@ -52,6 +99,20 @@
     transition: 0.5s;
     animation: rubberBand 1s;
   
+  }
+}
+
+/* Mobile responsive copy */
+@media screen and (max-width: 768px) {
+  .copy {
+    margin-left: 5%;
+    font-size: 12px;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    z-index: 10;
   }
 }
 .bg {
@@ -242,4 +303,122 @@
         color: #ececec;
       }
     }
+}
+
+/* ===== MOBILE RESPONSIVE STYLES FOR ABOUT/CONTACT/PORTFOLIO PAGES ===== */
+@media screen and (max-width: 768px) {
+  .about-page,
+  .contact-page,
+  .portfolio-page {
+    
+    h1 {
+      font-size: 36px;
+      margin-bottom: 25px;
+      text-align: center;
+      left: 0;
+      
+      &::before {
+        font-size: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -25px;
+      }
+      
+      &::after {
+        font-size: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -15px;
+        margin-left: 0;
+      }
+    }
+    
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      text-align: justify;
+      
+      .devName {
+        font-size: 16px;
+      }
+    }
+    
+    .text-zone {
+      position: static;
+      left: auto;
+      top: auto;
+      transform: none;
+      width: 90%;
+      margin: 20px auto;
+      padding: 20px;
+      display: block;
+      max-height: none;
+    }
+  }
+  
+  /* About page specific mobile styles */
+  .about-page {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
+    
+    .text-zone {
+      order: 1;
+      margin-bottom: 20px;
+    }
+    
+    .cloud-zone {
+      order: 2;
+      width: 100%;
+      height: auto;
+      position: static;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+    }
+  }
+}
+
+/* ===== TABLET RESPONSIVE (768px - 1024px) ===== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .about-page,
+  .contact-page,
+  .portfolio-page {
+    
+    h1 {
+      font-size: 45px;
+      
+      &::before {
+        font-size: 16px;
+      }
+      
+      &::after {
+        font-size: 16px;
+      }
+    }
+    
+    p {
+      font-size: 15px;
+      
+      .devName {
+        font-size: 17px;
+      }
+    }
+    
+    .text-zone {
+      left: 8%;
+      width: 45%;
+    }
+  }
+  
+  .about-page {
+    .cloud-zone {
+      width: 45%;
+    }
+  }
 }

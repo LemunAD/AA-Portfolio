@@ -3,12 +3,13 @@
 /* Importing google font  */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600;700;800;900&display=swap');
 .cloud-zone{
-  width: 50%;
+  width: 45%;
   height: 100%;
   top: 0;
   bottom:0;
   padding-top: 4%;
-  margin-left: 0;
+  margin-left: 5%; /* Align better with text-zone */
+  margin-right: 50px; /* 20px margin from the right for desktop */
   position: absolute;
   right: 0;
   overflow: hidden;
@@ -46,6 +47,8 @@
     font-size: 1.3em;
     width: 100%;
     height: 100%;
+    margin-top: 50px;
+    margin-right: 20px;
     position: relative;
     opacity: 1;
     z-index: 1;
@@ -136,27 +139,152 @@
 }
 
 /* Responsive adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
+    /* Small mobile phones */
+    .cloud-zone {
+        width: 100% !important;
+        height: auto !important;
+        position: static !important;
+        padding: 15px 0 100px 0 !important; /* Added bottom padding to avoid nav bar */
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+    
     .text-sphere {
-        margin-left: 20px;
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    
+    .tagcloud-container {
+        height: 500px !important;
+        margin-top: 20px !important;
+        margin-bottom: 100px !important; /* Keep away from bottom nav bar */
+        padding: 20px 10px 80px 10px; /* Extra bottom padding */
+    }
+    
+    .sphere-cloud-container {
+        height: 500px !important;
+        margin-top: 20px !important;
+        margin-bottom: 100px !important; /* Keep away from bottom nav bar */
+        padding: 20px 10px 80px 10px; /* Extra bottom padding */
     }
     
     .sphere-cloud {
-        width: 300px;
-        height: 300px;
+        width: 240px;
+        height: 240px;
     }
     
     .sphere-tag {
-        font-size: 12px;
+        font-size: 8px; /* 2px smaller than before */
         
         &:hover,
         &.hovered {
-            font-size: 14px;
+            font-size: 10px; /* 2px smaller than before */
         }
     }
     
     .tagcloud {
-        font-size: 1em;
+        font-size: 0.7em; /* Smaller font size for mobile */
+    }
+    
+    .fallback-skills-grid {
+        padding: 15px;
+        max-width: 300px;
+        min-height: 250px;
+        gap: 6px;
+    }
+    
+    .fallback-skill-tag {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /* Large mobile phones */
+    .cloud-zone {
+        width: 100% !important;
+        height: auto !important;
+        position: static !important;
+        padding: 20px 0 120px 0 !important; /* Even more bottom padding for larger mobile */
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+    
+    .text-sphere {
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    
+    .tagcloud-container {
+        height: 550px !important;
+        margin-top: 20px !important;
+        margin-bottom: 120px !important; /* Keep well away from bottom nav bar */
+        padding: 20px 15px 100px 15px; /* Extra bottom padding */
+    }
+    
+    .sphere-cloud-container {
+        height: 550px !important;
+        margin-top: 20px !important;
+        margin-bottom: 120px !important; /* Keep well away from bottom nav bar */
+        padding: 20px 15px 100px 15px; /* Extra bottom padding */
+    }
+    
+    .sphere-cloud {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .sphere-tag {
+        font-size: 9px; /* 2px smaller than before */
+        
+        &:hover,
+        &.hovered {
+            font-size: 11px; /* 2px smaller than before */
+        }
+    }
+    
+    .tagcloud {
+        font-size: 0.8em; /* Smaller font size for mobile */
+    }
+    
+    .fallback-skills-grid {
+        padding: 20px;
+        max-width: 350px;
+        min-height: 300px;
+        gap: 8px;
+    }
+    
+    .fallback-skill-tag {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Tablet responsive adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .cloud-zone {
+        width: 45%;
+        padding-top: 2%;
+    }
+    
+    .tagcloud-container {
+        height: 500px;
+        margin-top: 60px;
+    }
+    
+    .sphere-cloud-container {
+        height: 500px;
+        margin-top: 60px;
+    }
+    
+    .sphere-cloud {
+        width: 400px;
+        height: 400px;
     }
 }
 
