@@ -88,3 +88,27 @@ textarea {
     height: 45px;
   }
 }
+
+/* ===== iOS SAFARI SPECIFIC FIXES ===== */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-width: 768px) {
+    body {
+      -webkit-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    * {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+    }
+    
+    .App {
+      -webkit-overflow-scrolling: touch;
+      transform: translateZ(0);
+    }
+  }
+}

@@ -89,6 +89,19 @@
     animation: none !important; /* Disable animation that might be causing problems */
   }
 }
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-width: 768px) {
+    .container {
+      opacity: 1 !important;
+      animation: none !important;
+      transform: none !important;
+      -webkit-transform: none !important;
+      will-change: auto !important;
+    }
+  }
+}
 .copy{
   text-decoration: none;
   color: #00ced1;

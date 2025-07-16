@@ -180,6 +180,7 @@ li{
         li {
             margin-bottom: 15px;
             animation-delay: 0.5s;
+            opacity: 1 !important; /* Force visible on mobile */
         }
 
         li.half {
@@ -405,6 +406,42 @@ li{
         }
         .face6 {
             transform: rotateX(-90deg) translateZ(60px);
+        }
+    }
+}
+
+/* ===== iOS SAFARI SPECIFIC FIXES ===== */
+@supports (-webkit-touch-callout: none) {
+    @media screen and (max-width: 768px) {
+        .contact-form {
+            li {
+                opacity: 1 !important;
+                animation: none !important;
+                -webkit-animation: none !important;
+            }
+            
+            input[type='text'], 
+            input[type='email'] {
+                -webkit-appearance: none !important;
+                appearance: none !important;
+                border-radius: 4px !important;
+                opacity: 1 !important;
+            }
+            
+            textarea {
+                -webkit-appearance: none !important;
+                appearance: none !important;
+                border-radius: 4px !important;
+                opacity: 1 !important;
+            }
+        }
+        
+        .text-zone {
+            opacity: 1 !important;
+        }
+        
+        .contact-page {
+            opacity: 1 !important;
         }
     }
 }
