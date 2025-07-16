@@ -85,6 +85,8 @@
     top: 2%;
     left: 2.5%;
     min-height: auto;
+    opacity: 1 !important; /* Force visible on mobile - fix grey screen issue */
+    animation: none !important; /* Disable animation that might be causing problems */
   }
 }
 .copy{

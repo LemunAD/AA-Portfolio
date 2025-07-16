@@ -17,6 +17,14 @@
     }
 }
 
+/* Mobile fallback - ensure text is visible even if animations fail */
+@media screen and (max-width: 768px) {
+    .text-animate {
+        opacity: 1 !important; /* Force text visible on mobile */
+        animation: none !important; /* Disable potentially problematic animations */
+    }
+}
+
 @for $i from 0 through 42{
     .text-animate._#{$i}{
         animation-delay: #{$i / 10}s;
