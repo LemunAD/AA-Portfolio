@@ -21,26 +21,210 @@
     margin-left: 50px;
 }
 
+/* TagCloud library styles */
+.tagcloud-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    perspective: 1000px;
+    margin-top: 100px; /* Drop the cloud down by 100px for perfect centering */
+}
+
+.tagcloud-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 .tagcloud {
     display: inline-block;
-    top: 0;
-    user-select: none;
-    left: 0;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     letter-spacing: 0.0625em;
     font-size: 1.3em;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 1;
+    z-index: 1;
 }
 
-/* Change color of each text in sphere on hover   */
 .tagcloud--item {
-    color: #00ffffff;
+    color: #00ced1 !important;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        color: #ffffff !important;
+        transform: scale(1.2);
+    }
+}
+
+/* Custom 3D Sphere Fallback */
+.sphere-cloud-container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    margin-top: 100px; /* Keep consistent positioning with TagCloud */
+}
+
+.sphere-cloud {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+}
+
+.sphere-tag {
+    position: absolute;
+    color: #00ced1;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    white-space: nowrap;
+    
+    &:hover,
+    &.hovered {
+        color: #ffffff;
+        font-size: 16px;
+        text-shadow: 0 0 10px rgba(0, 206, 209, 0.8);
+    }
+}
+
+/* Loading states */
+.loading-sphere,
+.loading-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #00ced1;
+    font-size: 16px;
+    animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .text-sphere {
+        margin-left: 20px;
+    }
+    
+    .sphere-cloud {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .sphere-tag {
+        font-size: 12px;
+        
+        &:hover,
+        &.hovered {
+            font-size: 14px;
+        }
+    }
+    
+    .tagcloud {
+        font-size: 1em;
+    }
 }
 
 .tagcloud--item:hover {
-    color: #ececec;
-    transition: all 0.5s;
+    color: #ececec !important;
+    transition: all 0.5s ease;
+}
+
+/* Fallback styles for when TagCloud fails */
+.fallback-skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: 400px;
+}
+
+.fallback-skill-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(0, 206, 209, 0.1);
+    border: 1px solid #00ced1;
+    border-radius: 20px;
+    color: #00ced1;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: default;
+    transition: all 0.3s ease;
+    animation: fadeInScale 0.6s ease forwards;
+    opacity: 0;
+    transform: scale(0.8);
+
+    &:hover {
+        background: rgba(0, 206, 209, 0.2);
+        color: #ececec;
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 206, 209, 0.3);
+    }
+}
+
+@keyframes fadeInScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-sphere-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
             
         
