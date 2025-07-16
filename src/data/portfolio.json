@@ -1,11 +1,46 @@
 {
     "portfolio": [
         {
-            "cover" : "/portfolio/uwledge/cover.png",
-            "title" : "Uwledge",
-            "description" : "Wordpress,SEO,Amelia Plugin, Google Analytics",
-            "URL" : "https://uwledge.com/"
+            "cover": "/portfolio/organipro/cover.png",
+            "title": "OrganiPro Consulting",
+            "description": "Branding, website and marketing for a consulting firm",
+            "notes": "A comprehensive branding and strategic actions for a consulting firm launching itself in the Moroccan market. The project includes branding design, a modern website, SEO optimization, and marketing strategies as well as content to enhance online presence and conversion of leads into clients.",
+            "technologies": ["WordPress", "SEO", "Javascript", "Canva", "PHP", "MySQL", "Capcut","Odoo","Cold Calling","Sales","Meta Ads Manager"],
+            "url": "https://organipro.ma/",
+            "images": [
+                "/portfolio/organipro/modal1.png",
+                "/portfolio/organipro/modal2.png",
+                "/portfolio/organipro/modal3.png",
+                "/portfolio/organipro/modal40.png",
+                "/portfolio/organipro/modal5.png",
+                "/portfolio/organipro/modal6.png",
+                "/portfolio/organipro/modal7.png"
+          
 
+            ]
+        },
+        {
+            "cover": "/portfolio/uwledge/cover.png",
+            "title": "Portfolio Website",
+            "description": "Personal portfolio built with React",
+            "notes": "A modern, responsive portfolio website showcasing projects and skills. Features animated components, contact form integration with EmailJS, and smooth navigation.",
+            "technologies": ["React", "SCSS", "EmailJS", "FontAwesome", "JavaScript", "HTML5"],
+            "url": "#",
+            "images": [
+                "/portfolio/uwledge/cover.png"
+            ]
+        },
+        {
+            "cover": "/portfolio/uwledge/cover.png",
+            "title": "E-Commerce Platform",
+            "description": "Full-stack e-commerce solution",
+            "notes": "Complete e-commerce platform with shopping cart, payment integration, user authentication, and admin dashboard. Built with modern web technologies for optimal performance.",
+            "technologies": ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT"],
+            "url": "#",
+            "images": [
+                "/portfolio/uwledge/cover.png",
+                "/portfolio/uwledge/cover.png"
+            ]
         }
     ]
 }
