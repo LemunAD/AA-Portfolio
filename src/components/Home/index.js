@@ -8,9 +8,9 @@ import AnimatedLetters from '../AnimatedLetters';
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
-    const nameArray = ['P','o','r','t','f','o','l','i','o'];
+    const nameArray = ['','P','o','r','t','f','o','l','i','o'];
     const welcomeArray = ['W','e','l','c','o','m','e',' ','t','o',' '];
-    const jobArray = ['D','i','g','i','t','a','l','','S','e','r','v','i','c','e','s'];
+    const jobArray = ['f','o','r','','D','i','g','i','t','a','l','','S','e','r','v','i','c','e','s'];
 
 
  useEffect(() => {
@@ -43,7 +43,7 @@ const Home = () => {
         idx={22}/>
         </h1>
         <h2>Web Dev & Programming / Marketing services / Data analysis</h2>
-        <Link to="/contact" className="flat-button">CONTACT US</Link>
+        <Link to="/contact" className="flat-button">CONTACT ME</Link>
       </div>
 
     </div>

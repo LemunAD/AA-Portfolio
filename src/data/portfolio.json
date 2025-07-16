@@ -27,15 +27,30 @@
             "technologies": ["React", "SCSS", "EmailJS", "FontAwesome", "JavaScript", "HTML5"],
             "url": "#",
             "images": [
-                "/portfolio/tadoud/cover.png"
+                "/portfolio/tadoud/modal1.png",
+                "/portfolio/tadoud/modal2.png",
+                "/portfolio/tadoud/modal3.png",
+                "/portfolio/tadoud/modal4.png",
+                "/portfolio/tadoud/modal5.png"
+            ]
+        },
+        {
+            "cover": "/portfolio/dreamers/cover.png",
+            "title": "Dreamers: Creative Events and Media Agency",
+            "description": "Project management for creative events and media production",
+            "notes": "Led project management for a creative agency specializing in events and media production. Managed website development, coordinated photoshoots and video productions, led creative teams, and negotiated with suppliers to maintain budget efficiency.",
+            "technologies": ["WordPress", "Project Management", "Event Planning", "Creative Direction", "Budget Management", "Team Leadership", "Photography", "Video Production"],
+            "url": "#",
+            "images": [
+                "/portfolio/dreamers/cover.png"
             ]
         },
         {
             "cover": "/portfolio/tadoud/cover.png",
-            "title": "E-Commerce Platform",
+            "title": "Tadoud : A Cultural E-Commerce Platform",
             "description": "Full-stack e-commerce solution",
             "notes": "Complete e-commerce platform with shopping cart, payment integration, user authentication, and admin dashboard. Built with modern web technologies for optimal performance.",
-            "technologies": ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT"],
+            "technologies": ["Shopify", "SEO", "Design", "Canva", "Stripe API", "Social Media Marketing"],
             "url": "#",
             "images": [
                 "/portfolio/tadoud/cover.png",

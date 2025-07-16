@@ -90,7 +90,7 @@ const Contact = () => {
             <div className='text-zone'>
                 <h1>
                     
-                    <AnimatedLetters letterClass={letterClass} strArray={['C','o','n','t','a','c','t','','u','s']} 
+                    <AnimatedLetters letterClass={letterClass} strArray={['C','o','n','t','a','c','t','','M','e']} 
                     idx={15}/>
                 </h1>
                 <p>I'm interested in all freelance opportunities, and more specifically ambitious projects
